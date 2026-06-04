@@ -460,6 +460,26 @@ footer{
     object-fit: cover;
 }
 
+@media (max-width: 768px){
+
+    .navbar{
+        padding: 12px 15px;
+    }
+
+    .logo{
+        font-size: 1rem;
+    }
+
+    .nav-links{
+        gap: 12px;
+    }
+
+    .nav-links a{
+        font-size: 0.9rem;
+    }
+
+}
+
 
 /* =========================
    LIGHTBOX
@@ -506,4 +526,61 @@ footer{
 
     font-size: 45px;
     cursor: pointer;
+}
+
+/* =====================
+   HAMBURGUESA
+===================== */
+
+.hamburger{
+    display: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* =====================
+   MOBILE
+===================== */
+
+@media (max-width: 768px){
+
+    .navbar{
+        padding: 15px 20px;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .nav-links{
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: rgba(78,52,46,.98);
+
+        flex-direction: column;
+
+        text-align: center;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition: max-height .4s ease;
+    }
+
+    .nav-links.active{
+        max-height: 300px;
+    }
+
+    .nav-links li{
+        padding: 15px 0;
+    }
+
 }
