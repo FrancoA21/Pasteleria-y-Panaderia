@@ -1,0 +1,509 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #fffaf3;
+    color: #4e342e;
+    line-height: 1.6;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay{
+    width: 90%;
+    max-width: 900px;
+    color: white;
+
+    position: relative;
+    z-index: 100;
+
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(3px);
+
+    padding: 40px;
+    border-radius: 20px;
+
+
+}
+
+
+
+.hero h1{
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+}
+
+.frase{
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.slide.active{
+    opacity: 1;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   BOTON HERO
+========================= */
+
+.btn{
+    display: inline-block;
+    background: #d2691e;
+    color: white;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: .3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+
+.btn:hover{
+    background: #b85b17;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   NOSOTROS
+========================= */
+
+.nosotros{
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.nosotros h2{
+    font-size: 2.5rem;
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+
+.nosotros p{
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos{
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.productos h2{
+    text-align: center;
+    font-size: 2.8rem;
+    color: #8b4513;
+    margin-bottom: 50px;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.card{
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,.1);
+    transition: .4s;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 20px 35px rgba(0,0,0,.18);
+}
+
+.card img{
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3{
+    text-align: center;
+    padding: 20px;
+    color: #6b3f22;
+}
+
+/* =========================
+   MOTIVACION
+========================= */
+
+.motivacion{
+    padding: 90px 10%;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #fff1dc,
+        #ffe0b2
+    );
+}
+
+.motivacion h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #8b4513;
+}
+
+.motivacion p{
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background: #4e342e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 70px;
+    height: 70px;
+
+    background: #25D366;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+
+    font-size: 35px;
+
+    box-shadow:
+    0 0 0 0 rgba(37,211,102,.7);
+
+    z-index: 999;
+
+    animation: pulse 2s infinite;
+    transition: .3s;
+}
+
+.whatsapp:hover{
+    transform: scale(1.12);
+    background: #1ebc59;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,.7);
+    }
+
+    70%{
+        box-shadow:
+        0 0 0 20px rgba(37,211,102,0);
+    }
+
+    100%{
+        box-shadow:
+        0 0 0 0 rgba(37,211,102,0);
+    }
+
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media(max-width: 768px){
+
+    .hero{
+        background-attachment: scroll;
+    }
+
+    .hero h1{
+        font-size: 2.8rem;
+    }
+
+    .frase{
+        font-size: 1.1rem;
+    }
+
+    .productos h2,
+    .motivacion h2,
+    .nosotros h2{
+        font-size: 2rem;
+    }
+
+    .card img{
+        height: 260px;
+    }
+
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media(max-width: 480px){
+
+    .hero h1{
+        font-size: 2.2rem;
+    }
+
+    .frase{
+        font-size: 1rem;
+    }
+
+    .btn{
+        padding: 12px 28px;
+    }
+
+    .whatsapp{
+        width: 60px;
+        height: 60px;
+        font-size: 30px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 8%;
+
+    background: rgba(78,52,46,.95);
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.nav-links a:hover{
+    color: #ffcc80;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 8%;
+
+    background: rgba(78,52,46,.95);
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.nav-links a:hover{
+    color: #ffcc80;
+}
+
+
+.slider{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.slide.active{
+    opacity: 1;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,.9);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.lightbox.active{
+    display: flex;
+}
+
+.lightbox-img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 15px;
+}
+
+.close{
+
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    color: white;
+
+    font-size: 45px;
+    cursor: pointer;
+}
